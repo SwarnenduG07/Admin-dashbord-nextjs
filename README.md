@@ -11,11 +11,8 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:stainless-sdks/fluxcraft-1-node.git
+npm install fluxcraft-1
 ```
-
-> [!NOTE]
-> Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install fluxcraft-1`
 
 ## Usage
 
@@ -218,7 +215,7 @@ import Petstore from 'fluxcraft-1';
 ```
 
 To do the inverse, add `import "fluxcraft-1/shims/node"` (which does import polyfills).
-This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/stainless-sdks/fluxcraft-1-node/tree/main/src/_shims#readme)).
+This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
 
@@ -274,7 +271,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/fluxcraft-1-node/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/SwarnenduG07/Admin-dashbord-nextjs/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
