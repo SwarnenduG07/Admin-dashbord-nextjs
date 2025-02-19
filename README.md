@@ -56,6 +56,36 @@ main();
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
 
+## File uploads
+
+Request parameters that correspond to file uploads can be passed in many different forms:
+
+- `File` (or an object with the same structure)
+- a `fetch` `Response` (or an object with the same structure)
+- an `fs.ReadStream`
+- the return value of our `toFile` helper
+
+```ts
+import fs from 'fs';
+import fetch from 'node-fetch';
+import Petstore, { toFile } from 'fluxcraft-1';
+
+const client = new Petstore();
+
+// If you have access to Node `fs` we recommend using `fs.createReadStream()`:
+await client.pets.uploadImage(0, { image: fs.createReadStream('/path/to/file') });
+
+// Or if you have the web `File` API you can pass a `File` instance:
+await client.pets.uploadImage(0, { image: new File(['my bytes'], 'file') });
+
+// You can also pass a `fetch` `Response`:
+await client.pets.uploadImage(0, { image: await fetch('https://somesite/file') });
+
+// Finally, if none of the above are convenient, you can use our `toFile` helper:
+await client.pets.uploadImage(0, { image: await toFile(Buffer.from('my bytes'), 'file') });
+await client.pets.uploadImage(0, { image: await toFile(new Uint8Array([0, 1, 2]), 'file') });
+```
+
 ## Handling errors
 
 When the library is unable to connect to the API,
