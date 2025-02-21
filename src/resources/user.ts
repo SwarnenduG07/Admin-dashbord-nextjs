@@ -64,7 +64,15 @@ export class UserResource extends APIResource {
   /**
    * Creates list of users with given input array
    */
-  createWithList(body: UserCreateWithListParams, options?: Core.RequestOptions): Core.APIPromise<User> {
+  createWithList(body?: UserCreateWithListParams, options?: Core.RequestOptions): Core.APIPromise<User>;
+  createWithList(options?: Core.RequestOptions): Core.APIPromise<User>;
+  createWithList(
+    body?: UserCreateWithListParams | Core.RequestOptions,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<User> {
+    if (isRequestOptions(body)) {
+      return this.createWithList(undefined, body);
+    }
     return this._client.post('/user/createWithList', { body, ...options });
   }
 

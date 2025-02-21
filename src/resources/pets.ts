@@ -104,10 +104,19 @@ export class Pets extends APIResource {
    */
   uploadImage(
     petId: number,
-    params: PetUploadImageParams,
+    params?: PetUploadImageParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<APIResponse>;
+  uploadImage(petId: number, options?: Core.RequestOptions): Core.APIPromise<APIResponse>;
+  uploadImage(
+    petId: number,
+    params?: PetUploadImageParams | Core.RequestOptions,
     options?: Core.RequestOptions,
   ): Core.APIPromise<APIResponse> {
-    const { image, additionalMetadata } = params;
+    if (isRequestOptions(params)) {
+      return this.uploadImage(petId, undefined, params);
+    }
+    const { additionalMetadata, image } = params ?? {};
     return this._client.post(`/pet/${petId}/uploadImage`, {
       query: { additionalMetadata },
       body: image,
@@ -251,14 +260,14 @@ export interface PetUpdateByIDParams {
 
 export interface PetUploadImageParams {
   /**
-   * Body param:
-   */
-  image: string | ArrayBufferView | ArrayBuffer | BlobLike;
-
-  /**
    * Query param: Additional Metadata
    */
   additionalMetadata?: string;
+
+  /**
+   * Body param:
+   */
+  image?: string | ArrayBufferView | ArrayBuffer | BlobLike;
 }
 
 export declare namespace Pets {
