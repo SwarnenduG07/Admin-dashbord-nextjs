@@ -164,10 +164,8 @@ describe('resource pets', () => {
     ).rejects.toThrow(Petstore.NotFoundError);
   });
 
-  test('uploadImage: only required params', async () => {
-    const responsePromise = client.pets.uploadImage(0, {
-      image: await toFile(Buffer.from('# my file contents'), 'README.md'),
-    });
+  test('uploadImage', async () => {
+    const responsePromise = client.pets.uploadImage(0);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -177,10 +175,24 @@ describe('resource pets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('uploadImage: required and optional params', async () => {
-    const response = await client.pets.uploadImage(0, {
-      image: await toFile(Buffer.from('# my file contents'), 'README.md'),
-      additionalMetadata: 'additionalMetadata',
-    });
+  test('uploadImage: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(client.pets.uploadImage(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Petstore.NotFoundError,
+    );
+  });
+
+  test('uploadImage: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.pets.uploadImage(
+        0,
+        {
+          additionalMetadata: 'additionalMetadata',
+          image: await toFile(Buffer.from('# my file contents'), 'README.md'),
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Petstore.NotFoundError);
   });
 });
