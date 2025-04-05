@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-04-05)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#21](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/issues/21)) ([5b71dd9](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/5b71dd9890b76093d91ebf54dec53f56c929ea18))
+* **mcp:** remove unused tools.ts ([#23](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/issues/23)) ([3c70b28](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/3c70b28161e1c8fe920a671d7ba2647371a216b0))
+
+
+### Documentation
+
+* swap examples used in readme ([#24](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/issues/24)) ([08333da](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/08333dab9a368d7ef24a8cb4a56b09253f9ef76b))
+
 ## 0.1.0-alpha.1 (2025-04-03)
 
 Full Changelog: [v0.0.1-alpha.1...v0.1.0-alpha.1](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/compare/v0.0.1-alpha.1...v0.1.0-alpha.1)
