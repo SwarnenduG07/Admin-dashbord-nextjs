@@ -7,6 +7,11 @@ import * as Core from '../core';
 export class UserResource extends APIResource {
   /**
    * This can only be done by the logged in user.
+   *
+   * @example
+   * ```ts
+   * const user = await client.user.create();
+   * ```
    */
   create(body?: UserCreateParams, options?: Core.RequestOptions): Core.APIPromise<User>;
   create(options?: Core.RequestOptions): Core.APIPromise<User>;
@@ -22,6 +27,11 @@ export class UserResource extends APIResource {
 
   /**
    * Get user by user name
+   *
+   * @example
+   * ```ts
+   * const user = await client.user.retrieve('username');
+   * ```
    */
   retrieve(username: string, options?: Core.RequestOptions): Core.APIPromise<User> {
     return this._client.get(`/user/${username}`, options);
@@ -29,6 +39,11 @@ export class UserResource extends APIResource {
 
   /**
    * This can only be done by the logged in user.
+   *
+   * @example
+   * ```ts
+   * await client.user.update('username');
+   * ```
    */
   update(
     existingUsername: string,
@@ -53,6 +68,11 @@ export class UserResource extends APIResource {
 
   /**
    * This can only be done by the logged in user.
+   *
+   * @example
+   * ```ts
+   * await client.user.delete('username');
+   * ```
    */
   delete(username: string, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.delete(`/user/${username}`, {
@@ -63,6 +83,11 @@ export class UserResource extends APIResource {
 
   /**
    * Creates list of users with given input array
+   *
+   * @example
+   * ```ts
+   * const user = await client.user.createWithList([{}]);
+   * ```
    */
   createWithList(body?: UserCreateWithListParams, options?: Core.RequestOptions): Core.APIPromise<User>;
   createWithList(options?: Core.RequestOptions): Core.APIPromise<User>;
@@ -78,6 +103,11 @@ export class UserResource extends APIResource {
 
   /**
    * Logs user into the system
+   *
+   * @example
+   * ```ts
+   * const response = await client.user.login();
+   * ```
    */
   login(query?: UserLoginParams, options?: Core.RequestOptions): Core.APIPromise<string>;
   login(options?: Core.RequestOptions): Core.APIPromise<string>;
@@ -93,6 +123,11 @@ export class UserResource extends APIResource {
 
   /**
    * Logs out current logged in user session
+   *
+   * @example
+   * ```ts
+   * await client.user.logout();
+   * ```
    */
   logout(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.get('/user/logout', { ...options, headers: { Accept: '*/*', ...options?.headers } });

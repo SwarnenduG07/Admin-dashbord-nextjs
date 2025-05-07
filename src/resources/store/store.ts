@@ -12,6 +12,11 @@ export class Store extends APIResource {
 
   /**
    * Place a new order in the store
+   *
+   * @example
+   * ```ts
+   * const order = await client.store.createOrder();
+   * ```
    */
   createOrder(body?: StoreCreateOrderParams, options?: Core.RequestOptions): Core.APIPromise<Shared.Order>;
   createOrder(options?: Core.RequestOptions): Core.APIPromise<Shared.Order>;
@@ -27,6 +32,11 @@ export class Store extends APIResource {
 
   /**
    * Returns a map of status codes to quantities
+   *
+   * @example
+   * ```ts
+   * const response = await client.store.inventory();
+   * ```
    */
   inventory(options?: Core.RequestOptions): Core.APIPromise<StoreInventoryResponse> {
     return this._client.get('/store/inventory', options);
