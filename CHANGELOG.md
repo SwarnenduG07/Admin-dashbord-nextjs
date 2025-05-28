@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-05-28)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#21](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/issues/21)) ([5b71dd9](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/5b71dd9890b76093d91ebf54dec53f56c929ea18))
+* **mcp:** remove unused tools.ts ([#23](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/issues/23)) ([3c70b28](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/3c70b28161e1c8fe920a671d7ba2647371a216b0))
+
+
+### Chores
+
+* **ci:** add timeout thresholds for CI jobs ([08842ef](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/08842efdf98b475470c0c1b5c608ca0bf965f0b5))
+* **ci:** bump node version for release workflows ([66048d5](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/66048d5427322ecf05b6aeb221e4eb2a5e50bf83))
+* **ci:** only use depot for staging repos ([19dea69](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/19dea693d1b9828c6e39b482a4c0c59d9170bf5f))
+* **client:** minor internal fixes ([bd58590](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/bd585903822fee96d0681621871c77ad5078bcb8))
+* **docs:** grammar improvements ([3cec3c1](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/3cec3c1a184d5be42533f5d869cd2de7b989a727))
+* improve publish-npm script --latest tag logic ([62a41c3](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/62a41c3500cb80fde6cd127625c07a319a988495))
+* **internal:** codegen related update ([dab4039](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/dab40398c549da56ace401197ebb788f6380eb19))
+* **internal:** reduce CI branch coverage ([a501080](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/a501080d87352993593c967adfb2e3f999f71c77))
+* **internal:** upload builds and expand CI branch coverage ([ce0266c](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/ce0266c78a46c93a636344ae9ac095ba10040c15))
+* **tests:** improve enum examples ([#25](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/issues/25)) ([f2e3e4c](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/f2e3e4c1740b46e02ad346e7031f411595577da7))
+
+
+### Documentation
+
+* add examples to tsdocs ([25ae67f](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/25ae67f0113e961d24f6517495385da18abe9d4b))
+* **readme:** fix typo ([ec6d3fd](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/ec6d3fd7d1a7c7865e91ac73c8f051ee179af43e))
+* swap examples used in readme ([#24](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/issues/24)) ([08333da](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/commit/08333dab9a368d7ef24a8cb4a56b09253f9ef76b))
+
 ## 0.1.0-alpha.1 (2025-04-03)
 
 Full Changelog: [v0.0.1-alpha.1...v0.1.0-alpha.1](https://github.com/SwarnenduG07/Admin-dashbord-nextjs/compare/v0.0.1-alpha.1...v0.1.0-alpha.1)
