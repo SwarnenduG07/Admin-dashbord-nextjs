@@ -8,6 +8,11 @@ export class Order extends APIResource {
   /**
    * For valid response try integer IDs with value <= 5 or > 10. Other values will
    * generate exceptions.
+   *
+   * @example
+   * ```ts
+   * const order = await client.store.order.retrieve(0);
+   * ```
    */
   retrieve(orderId: number, options?: Core.RequestOptions): Core.APIPromise<Shared.Order> {
     return this._client.get(`/store/order/${orderId}`, options);
@@ -16,6 +21,11 @@ export class Order extends APIResource {
   /**
    * For valid response try integer IDs with value < 1000. Anything above 1000 or
    * nonintegers will generate API errors
+   *
+   * @example
+   * ```ts
+   * await client.store.order.deleteOrder(0);
+   * ```
    */
   deleteOrder(orderId: number, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.delete(`/store/order/${orderId}`, {
